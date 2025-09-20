@@ -6,7 +6,7 @@ import json
 # We extract the first word from each line.
 # All words are written to a JSON file.
 def main():
-    file = open("wordlists-raw/fi-kotus.txt", "r", encoding="utf-8")
+    file = open("wordlists-raw/lang_fi_kotus.txt", "r", encoding="utf-8")
     print("Read file OK")
     content = file.read()
 
@@ -16,7 +16,7 @@ def main():
 
     print("Extract words OK")
     json_str = json.dumps(words, indent=4)
-    with open("wordlists-json/fi-kotus.json", "w") as f:
+    with open("wordlists-json/lang_fi_kotus.json", "w") as f:
         f.write(json_str)
 
     print("JSON write OK")
