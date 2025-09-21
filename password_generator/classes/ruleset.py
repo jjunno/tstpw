@@ -30,3 +30,12 @@ class Ruleset:
                    if w == self.password.original:
                         return True
         return False
+
+    def append_ruleset(self):
+        print("Appending ruleset")
+        for word in self.password.words:
+              for rule in self.ruleset:
+                   w = rule + word
+                   if w == self.password.original:
+                        return True
+        return False

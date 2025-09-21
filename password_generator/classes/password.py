@@ -30,4 +30,6 @@ class Password:
         r = Ruleset(self)
         if r.prepend_ruleset():
               return True
+        if r.append_ruleset():
+              return True
         return False
