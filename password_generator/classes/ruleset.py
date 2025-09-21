@@ -57,5 +57,5 @@ class Ruleset:
                 rebuilt = word[:i] + word[i].upper() + word[i+1:]
                 if rebuilt == self.password.original:
                     return True
-                  
+                
         return False
