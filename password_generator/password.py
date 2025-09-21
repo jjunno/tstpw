@@ -10,7 +10,6 @@ class Password:
 
         print(f"Original password is \"{original}\"")
         self.read_files()
-        self.read_ruleset()
 
     def read_files(self):
         for filename in self.filenames:
@@ -22,7 +21,7 @@ class Password:
         print(f"{len(self.filenames)} files read, total {len(self.words)} words found")
 
     # Read all .json files in rulesets directory.
-    def read_ruleset(self):
+    def read_rulesets(self):
         filenames = []
         for i in listdir("rulesets"):
             if i.endswith(".json"):

@@ -12,7 +12,10 @@ def main():
     if pw.is_in_lists():
         print(f"The password was found in common word lists")
     else:
-        print(f"x x x")
+        print(f"The password was not found in common word lists, extending to rulesets")
+        pw.read_rulesets()
+
+    print(f"Finished main application")
 
 if __name__ == "__main__":
     main() 
