@@ -18,6 +18,8 @@ def main():
         print(f"The password \"{pw.original}\" was not found in common word lists, extending to rulesets")
         if pw.apply_ruleset():
             print(f"The password \"{pw.original}\" was found on ruleset apply")
+        else:
+            print(f"The password \"{pw.original}\" was not found on ruleset apply")
 
     print(f"Finished main application in {time.time() - ts_start} seconds")
 
