@@ -36,4 +36,6 @@ class Password:
               return True
         if r.try_char_capitalization():
               return True
+        if r.try_leet_style():
+              return True
         return False

@@ -6,6 +6,21 @@ class Ruleset:
         self.password = password
         self.ruleset = []
         self.read_rulesets()
+        
+        # Actual character, list of leet characters
+        self.leet_dict = {
+             "a": ["@", "4"],
+             "b": ["8", "3", "13"],
+             "e": ["3"],
+             "g": ["6"],
+             "o": ["0"],
+             "i": ["1", "!"],
+             "s": ["5", "$"],
+             "t": ["7"],
+             "x": ["x"],
+             "x": ["x"],
+             "x": ["x"],
+        }
 
     # Read all .json files in rulesets directory.
     def read_rulesets(self):
@@ -58,4 +73,17 @@ class Ruleset:
                 if rebuilt == self.password.original:
                     return True
                 
+        return False
+    
+    # apple to 4ppl3, etc
+    def try_leet_style(self):
+        print("Trying leet style")
+
+        for word in self.password.words:
+            for i in word:
+                 if i in self.leet_dict:
+                      for leet in self.leet_dict[i]:
+                            w = word.replace(i, leet)
+                            if w == self.password.original:
+                                 return True
         return False
