@@ -1,10 +1,9 @@
-import json
 from classes.ruleset import Ruleset
 
 class Password:
     def __init__(self, original):
         self.original = original
-        self.filenames = ["firstnames_men_fi_avoindata.json", "firstnames_women_fi_avoindata.json", "surnames_fi_avoindata.json", "lang_fi_kotus.json"]
+        self.filenames = ["firstnames_men_fi_avoindata.txt", "firstnames_women_fi_avoindata.txt", "surnames_fi_avoindata.txt", "lang_fi_kotus.txt"]
         self.words = []
 
         print(f"Original password is \"{original}\"")
@@ -12,8 +11,8 @@ class Password:
 
     def read_files(self):
         for filename in self.filenames:
-                file = open(f"wordlists_json/{filename}", "r", encoding="utf-8")
-                content = json.load(file)
+                file = open(f"wordlists_parsed/{filename}", "r", encoding="utf-8")
+                content = file.read()
                 for line in content:
                     self.words.append(line)
                 

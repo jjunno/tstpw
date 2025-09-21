@@ -1,4 +1,3 @@
-import json
 from os import listdir
 from datetime import datetime
 
@@ -23,7 +22,7 @@ class Ruleset:
              "x": ["x"],
         }
 
-    # Read all .json files in rulesets directory.
+    # Read all .txt files in rulesets directory.
     def read_rulesets(self):
         filenames = []
         for i in listdir("rulesets"):
@@ -32,7 +31,7 @@ class Ruleset:
 
         for filename in filenames:
                 file = open(f"rulesets/{filename}", "r", encoding="utf-8")
-                content = json.load(file)
+                content = file.read()
                 for line in content:
                     self.ruleset.append(line)
                 
