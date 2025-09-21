@@ -1,5 +1,5 @@
 import sys
-from password import Password
+from classes.password import Password
 
 def main():
     use_password = None
@@ -13,7 +13,7 @@ def main():
         print(f"The password was found in common word lists")
     else:
         print(f"The password was not found in common word lists, extending to rulesets")
-        pw.read_rulesets()
+        pw.apply_ruleset()
 
     print(f"Finished main application")
 

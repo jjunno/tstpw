@@ -1,5 +1,6 @@
 wordlists_to_json/__pycache__
 password_generator/__pycache__
+password_generator/classes/__pycache__
 
 docker-compose.yml
 
