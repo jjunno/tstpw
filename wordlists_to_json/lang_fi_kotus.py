@@ -12,7 +12,7 @@ def main():
 
     words = []
     for line in content.splitlines():
-        words.append(line.split()[0])
+        words.append(line.split()[0].lower().strip())
 
     print("Extract words OK")
     json_str = json.dumps(words, indent=4)
