@@ -18,6 +18,11 @@ https://www.avoindata.fi/data/fi/dataset/none
 https://www.avoindata.fi/data/fi/dataset/none
 ```
 
+## Most used passwords
+```
+https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials
+```
+
 # Example docker-compose.yml
 ```
 services:
