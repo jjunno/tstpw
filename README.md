@@ -42,6 +42,12 @@ The application contains rudimentary logic for following rules. You do not need 
 # Parsers
 Parses are there in case the material is updated (manually).
 
+# To do
+What to do maybe next rainy sunday.
+
+* Improve dates to use YYYYmmdd instead of year only
+* List of alphabets and combinations to prepend and append
+
 # Material sources
 ## Lang FI
 ```
