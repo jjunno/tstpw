@@ -10,10 +10,11 @@ def main():
     pw = Password(use_password.strip())
 
     if pw.is_in_lists():
-        print(f"The password was found in common word lists")
+        print(f"The password \"{pw.original}\" was found in common word lists")
     else:
-        print(f"The password was not found in common word lists, extending to rulesets")
-        pw.apply_ruleset()
+        print(f"The password \"{pw.original}\" was not found in common word lists, extending to rulesets")
+        if pw.apply_ruleset():
+            print(f"The password \"{pw.original}\" was found on ruleset apply")
 
     print(f"Finished main application")
 

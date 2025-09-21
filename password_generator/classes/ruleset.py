@@ -2,7 +2,8 @@ import json
 from os import listdir
 
 class Ruleset:
-    def __init__(self):
+    def __init__(self, password):
+        self.password = password
         self.ruleset = []
         self.read_rulesets()
 
@@ -21,5 +22,11 @@ class Ruleset:
                 
         print(f"{len(filenames)} ruleset files read, total {len(self.ruleset)} rules found")
 
-    def run_all_in_order(self):
-         print("Running all rulesets in order")
+    def prepend_ruleset(self):
+        print("Prepending ruleset")
+        for word in self.password.words:
+              for rule in self.ruleset:
+                   w = word + rule
+                   if w == self.password.original:
+                        return True
+        return False

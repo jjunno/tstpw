@@ -27,5 +27,7 @@ class Password:
         return False
     
     def apply_ruleset(self):
-         r = Ruleset()
-         r.run_all_in_order()
+        r = Ruleset(self)
+        if r.prepend_ruleset():
+              return True
+        return False
