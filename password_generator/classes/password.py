@@ -32,4 +32,6 @@ class Password:
               return True
         if r.append_ruleset():
               return True
+        if r.try_upper_case():
+              return True
         return False

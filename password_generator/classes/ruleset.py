@@ -39,3 +39,11 @@ class Ruleset:
                    if w == self.password.original:
                         return True
         return False
+
+    def try_upper_case(self):
+        print("Trying upper case")
+        for word in self.password.words:
+             # No need to try lowering as all materila is lower
+             if word.upper() == self.password.original:
+                  return True
+        return False
