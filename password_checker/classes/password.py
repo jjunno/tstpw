@@ -23,7 +23,7 @@ class Password:
       for word in self.words:
             if word == self.original:
                   return True
-            return False
+      return False
       
     def apply_ruleset(self):
       r = Ruleset(self)
