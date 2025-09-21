@@ -1,26 +1,20 @@
-import json
-
 # Read the entire content of the file.
 # Words are in lines such as:
 # aakkonen		substantiivi	38
 # We extract the first word from each line.
-# All words are written to a JSON file.
+# All words are written to a new txt file.
 def main():
     file = open("wordlists_raw/lang_fi_kotus.txt", "r", encoding="utf-8")
-    print("Read file OK")
     content = file.read()
-
-    words = []
+    print("Read file OK")
+    
+    new_file = open("wordlists_parsed/lang_fi_kotus.txt", "w", encoding="utf-8")
     for line in content.splitlines():
-        words.append(line.split()[0].lower().strip())
+        new_file.write(line.split()[0].lower().strip() + '\n')
 
-    print("Extract words OK")
-    json_str = json.dumps(words, indent=4, ensure_ascii=False)
-    with open("wordlists_json/lang_fi_kotus.json", "w") as f:
-        f.write(json_str)
-
-    print("JSON write OK")
+    print("Rewrite file OK")
     file.close()
+    new_file.close()
     print("Finished")
 
 if __name__ == "__main__":

@@ -1,26 +1,20 @@
-import json
-
 # Iterates all name files from avoindata.
 # In each file, each line is a single name, which we extract.
-# All names are written to type specific JSON file.
+# All names are written to new type specific text files.
 def main():
-    filenames = ['surnames_fi_avoindata', 'firstnames_men_fi_avoindata', 'firstnames_women_fi_avoindata']
+    filenames = ['surnames_fi_avoindata.txt', 'firstnames_men_fi_avoindata.txt', 'firstnames_women_fi_avoindata.txt']
     for filename in filenames:
-        file = open(f"wordlists_raw/{filename}.txt", "r", encoding="utf-8")
-        print(f"Read file {filename} OK")
+        file = open(f"wordlists_raw/{filename}", "r", encoding="utf-8")
         content = file.read()
+        print(f"Read file {filename} OK")
 
-        names = []
+        new_file = open(f"wordlists_parsed/{filename}", "w", encoding="utf-8")
         for line in content.splitlines():
-            names.append(line.lower().strip())
+            new_file.write(line.lower().strip() + '\n')
 
-        print("Extract names OK")
-        json_str = json.dumps(names, indent=4, ensure_ascii=False)
-        with open(f"wordlists_json/{filename}.json", "w") as f:
-            f.write(json_str)
-
-    print("JSON write OK")
-    file.close()
+        print("Rewrite files OK")
+        file.close()
+        new_file.close()
     print("Finished")
 
 if __name__ == "__main__":
