@@ -6,10 +6,9 @@ class Password:
 
     def read_files(self):
         for filename in self.filenames:
-                file = open("wordlists_json/{filename}", "r", encoding="utf-8")
+                file = open(f"wordlists_json/{filename}", "r", encoding="utf-8")
                 content = file.read()
                 for line in content.splitlines():
-                    self.words.append = []
-                    print(line)
-            # with open(f"wordlists_json/{filename}", "r", encoding="utf-8") as f:
-            #     data = f.read()
+                    self.words.append(line)
+                
+        print(f"{len(self.filenames)} files read, total {len(self.words)} words found")
