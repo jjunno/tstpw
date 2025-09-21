@@ -6,7 +6,7 @@ import json
 def main():
     filenames = ['surnames_fi_avoindata', 'firstnames_men_fi_avoindata', 'firstnames_women_fi_avoindata']
     for filename in filenames:
-        file = open(f"wordlists-raw/{filename}.txt", "r", encoding="utf-8")
+        file = open(f"wordlists_raw/{filename}.txt", "r", encoding="utf-8")
         print(f"Read file {filename} OK")
         content = file.read()
 
@@ -16,7 +16,7 @@ def main():
 
         print("Extract names OK")
         json_str = json.dumps(names, indent=4)
-        with open(f"wordlists-json/{filename}.json", "w") as f:
+        with open(f"wordlists_json/{filename}.json", "w") as f:
             f.write(json_str)
 
     print("JSON write OK")
