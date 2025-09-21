@@ -47,3 +47,15 @@ class Ruleset:
              if word.upper() == self.password.original:
                   return True
         return False
+
+    # Iterate each character of each word.
+    # Apple, aPple, apPle, etc.
+    def try_char_capitalization(self):
+        print("Trying char casing")
+        for word in self.password.words:
+            for i in range(len(word)):
+                rebuilt = word[:i] + word[i].upper() + word[i+1:]
+                if rebuilt == self.password.original:
+                    return True
+                  
+        return False

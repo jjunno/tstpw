@@ -34,4 +34,6 @@ class Password:
               return True
         if r.try_upper_case():
               return True
+        if r.try_char_capitalization():
+              return True
         return False
