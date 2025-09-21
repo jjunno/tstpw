@@ -100,13 +100,14 @@ class Ruleset:
     
     def dates(self):
         print("Trying dates")
-        curr_year = datetime.now().year
-        curr_year + 1
-        while curr_year > 0:
+
+        # Year, desced from curr+1 to 1900
+        curr_year = datetime.now().year + 1
+        while curr_year > 1900:
             for word in self.password.words:
-                w = word + str(curr_year)
-                if w == self.password.original:
+                if word + str(curr_year) == self.password.original:
+                    return True
+                if str(curr_year) + word == self.password.original:
                     return True
             curr_year -= 1
-
         return False
