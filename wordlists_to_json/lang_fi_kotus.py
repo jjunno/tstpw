@@ -15,7 +15,7 @@ def main():
         words.append(line.split()[0].lower().strip())
 
     print("Extract words OK")
-    json_str = json.dumps(words, indent=4)
+    json_str = json.dumps(words, indent=4, ensure_ascii=False)
     with open("wordlists_json/lang_fi_kotus.json", "w") as f:
         f.write(json_str)
 

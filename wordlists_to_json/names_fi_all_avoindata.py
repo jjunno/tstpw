@@ -15,7 +15,7 @@ def main():
             names.append(line.lower().strip())
 
         print("Extract names OK")
-        json_str = json.dumps(names, indent=4)
+        json_str = json.dumps(names, indent=4, ensure_ascii=False)
         with open(f"wordlists_json/{filename}.json", "w") as f:
             f.write(json_str)
 
