@@ -1,7 +1,3 @@
-wordlists_to_json/__pycache__
-password_generator/__pycache__
-password_generator/classes/__pycache__
-
-docker-compose.yml
-
-secret_redis_password.txt
+wordlist_parsers/__pycache__
+password_checker/__pycache__
+password_checker/classes/__pycache__

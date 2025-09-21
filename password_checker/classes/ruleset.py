@@ -25,12 +25,12 @@ class Ruleset:
     # Read all .txt files in rulesets directory.
     def read_rulesets(self):
         filenames = []
-        for i in listdir("rulesets"):
+        for i in listdir("material/rulesets"):
             if i.endswith(".txt"):
                 filenames.append(i)
 
         for filename in filenames:
-                file = open(f"rulesets/{filename}", "r", encoding="utf-8")
+                file = open(f"material/rulesets/{filename}", "r", encoding="utf-8")
                 content = file.read()
                 for line in content.splitlines():
                     self.ruleset.append(line)

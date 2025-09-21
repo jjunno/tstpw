@@ -11,7 +11,7 @@ class Password:
 
     def read_files(self):
         for filename in self.filenames:
-                file = open(f"wordlists_parsed/{filename}", "r", encoding="utf-8")
+                file = open(f"material/wordlists_parsed/{filename}", "r", encoding="utf-8")
                 content = file.read()
                 for line in content.splitlines():
                     self.words.append(line)

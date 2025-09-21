@@ -22,28 +22,3 @@ https://www.avoindata.fi/data/fi/dataset/none
 ```
 https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials
 ```
-
-# Example docker-compose.yml
-```
-services:
-  redis:
-    build:
-      context: .
-      dockerfile: redis.Dockerfile
-    container_name: tstpw_redis
-    secrets:
-      - redis_password
-    restart: unless-stopped
-    command: sh -c "redis-server --requirepass $(cat /run/secrets/redis_password)"
-    ports:
-      - '6379:6379'
-    networks:
-      - tstpw_network
-
-networks:
-  tstpw_network:
-
-secrets:
-  redis_password:
-    file: ./secret_redis_password.txt
-```
