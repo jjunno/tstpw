@@ -55,7 +55,7 @@ class Ruleset:
                         return True
         return False
 
-    def try_upper_case(self):
+    def upper_case(self):
         print("Trying upper case")
         for word in self.password.words:
              # No need to try lowering as all materila is lower
@@ -65,7 +65,7 @@ class Ruleset:
 
     # Iterate each character of each word.
     # Apple, aPple, apPle, etc.
-    def try_char_capitalization(self):
+    def char_capitalization(self):
         print("Trying char casing")
         for word in self.password.words:
             for i in range(len(word)):
@@ -76,7 +76,7 @@ class Ruleset:
         return False
     
     # apple to 4ppl3, etc
-    def try_leet_style(self):
+    def leet_style(self):
         print("Trying leet style")
 
         for word in self.password.words:

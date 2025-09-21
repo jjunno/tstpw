@@ -31,11 +31,11 @@ class Password:
               return True
         if r.append_ruleset():
               return True
-        if r.try_upper_case():
+        if r.upper_case():
               return True
-        if r.try_char_capitalization():
+        if r.char_capitalization():
               return True
-        if r.try_leet_style():
+        if r.leet_style():
               return True
         if r.repititon():
               return True
