@@ -40,4 +40,6 @@ class Password:
               return True
         if r.repititon():
               return True
+        if r.dates():
+              return True
         return False

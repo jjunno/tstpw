@@ -1,5 +1,6 @@
 import json
 from os import listdir
+from datetime import datetime
 
 class Ruleset:
     def __init__(self, password):
@@ -95,4 +96,17 @@ class Ruleset:
                    w = word * i
                    if w == self.password.original:
                     return True
+        return False
+    
+    def dates(self):
+        print("Trying dates")
+        curr_year = datetime.now().year
+        curr_year + 1
+        while curr_year > 0:
+            for word in self.password.words:
+                w = word + str(curr_year)
+                if w == self.password.original:
+                    return True
+            curr_year -= 1
+
         return False
