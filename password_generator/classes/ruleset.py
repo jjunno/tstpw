@@ -26,13 +26,13 @@ class Ruleset:
     def read_rulesets(self):
         filenames = []
         for i in listdir("rulesets"):
-            if i.endswith(".json"):
+            if i.endswith(".txt"):
                 filenames.append(i)
 
         for filename in filenames:
                 file = open(f"rulesets/{filename}", "r", encoding="utf-8")
                 content = file.read()
-                for line in content:
+                for line in content.splitlines():
                     self.ruleset.append(line)
                 
         print(f"{len(filenames)} ruleset files read, total {len(self.ruleset)} rules found")

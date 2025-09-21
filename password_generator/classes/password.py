@@ -3,7 +3,7 @@ from classes.ruleset import Ruleset
 class Password:
     def __init__(self, original):
         self.original = original
-        self.filenames = ["firstnames_men_fi_avoindata.txt", "firstnames_women_fi_avoindata.txt", "surnames_fi_avoindata.txt", "lang_fi_kotus.txt"]
+        self.filenames = ["firstnames_men_fi_avoindata.txt", "firstnames_women_fi_avoindata.txt", "surnames_fi_avoindata.txt", "lang_fi_kotus.txt", "100k-most-used-passwords-NCSC.txt"]
         self.words = []
 
         print(f"Original password is \"{original}\"")
@@ -13,7 +13,7 @@ class Password:
         for filename in self.filenames:
                 file = open(f"wordlists_parsed/{filename}", "r", encoding="utf-8")
                 content = file.read()
-                for line in content:
+                for line in content.splitlines():
                     self.words.append(line)
                 
         print(f"{len(self.filenames)} files read, total {len(self.words)} words found")
