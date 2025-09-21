@@ -87,3 +87,12 @@ class Ruleset:
                             if w == self.password.original:
                                  return True
         return False
+    
+    def repititon(self):
+        print("Trying repitition")
+        for word in self.password.words:
+              for i in range(1, 4):
+                   w = word * i
+                   if w == self.password.original:
+                    return True
+        return False

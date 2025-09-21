@@ -38,4 +38,6 @@ class Password:
               return True
         if r.try_leet_style():
               return True
+        if r.repititon():
+              return True
         return False
